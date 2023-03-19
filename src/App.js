@@ -3,7 +3,7 @@ import Header from "./Component/Layout/Header";
 import Meals from "./Component/Meals/Meals";
 import Cart from "./Component/Cart/Cart";
 
-import cartProvider from "./Component/Store/CartProvider";
+import CartProvider from "./Component/Store/CartProvider";
 const App = () => {
  
  const [cartIsShown, setCartShown]=useState(false)
@@ -16,13 +16,13 @@ const App = () => {
  }
  
   return (
-    <cartProvider>
+    <CartProvider>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShowCart={showCartHandler}/>
       <main>
         <Meals />
       </main>
-    </cartProvider>
+    </CartProvider>
   );
 };
 
